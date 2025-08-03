@@ -1,3 +1,5 @@
+from collections import deque
+
 class Solution:
     def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
         traversal = []
@@ -5,7 +7,7 @@ class Solution:
         if root == None:
             return traversal
         
-        stack = []
+        stack = deque([])
         current_node = root
 
         while len(stack) > 0 or current_node:
